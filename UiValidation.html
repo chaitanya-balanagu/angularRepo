@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>UI Validations</title>
+      <style>
+      .put{
+        width:200px;
+        height:20px;
+        border-radius: 6px;
+        border-top-color:rgb(212, 255, 0);
+        border-bottom-color:rgb(188, 213, 60);
+        /*border-width: 10px;*/
+        box-shadow: 3px, 3px, 3px, rgb(9, 42, 172);
+      }
+      fieldset{
+        width: 400px;
+        height: 300px;
+       padding-left: 10px;
+        background-color:rgb(244, 250, 244) ;
+        padding-top:30px; 
+      }
+      div{
+        margin-top: 1px;
+      }
+      label{
+        display:inline-block;
+        width:130px;
+        text-align:right;
+      }
+      </style>
+</head>
+<body style="background-color:linen">
+   <center> <h1> Form</h1></center>
+   <fieldset>
+   <div style="background-color: #b5b7f8 width:200px">
+    <form name="form1" action=" rough.html" reset="ui()">
+    <div>
+         <label> Enter name:  </label>
+         <input type="text" class="put" id="name" placeholder="name" pattern="[a-zA-Z]{3,20}" > <br> <br>
+    </div>
+    <div>
+        <label> Enter lname:  </label>
+        <input type="text"  class="put" id="lname" placeholder="lname" pattern="[a-zA-Z]{3,20}" required>  <br> <br>
+    </div>
+    <div>
+        <label>  Enter password:   </label>
+        <input type="password"  class="put" name="pass" placeholder="password" pattern="[a-zA-Z0-9]{8,20}" required> <br> <br>
+    </div>
+    <div>
+        <label>  Re-Enter password:   </label>
+        <input type="password"  class="put" id="rpass" placeholder="Re enter password" pattern="[a-zA-Z0-9]{8,20}" required> <br>  <br>
+    </div>
+    <div>
+    <label>  Email:   </label>
+    <input type="email" id="email" class="put" placeholder="email" pattern="[a-z0-9@.]{3,20}" required> <br> <br>
+    </div>
+    <div>
+    <label>  Number:   </label>
+    <input type="number" id="num"  class="put" pattern="[0-9]{10}"> <br> <br>
+    </div>
+   <center><input type="submit" value="submit"  onclick="return ui()">
+    <input type="reset" value="reset" ></center> 
+    </form>
+   </div>
+   </fieldset>
+
+    <script>
+    function ui()
+    {
+    let name=document.getElementById("name").value;
+    let lastname=document.getElementByid("lname").value;
+    let pass=document.form1.pass.value;
+    let rpass=document.getElementById("rpass").value;
+    let mail=document.getElementById("email").value;
+    let num=document.getElementById("num").value;
+    
+    if( name==="null"){
+        alert("pls enter a valid name")
+        return false;
+    }
+    if(lastname==="null"){
+        alert("pls enter a valid last name")
+        return false;
+    }
+    if(pass==rpass)
+    {
+      return true;
+    }
+    else
+    {
+        alert("password should match");
+        return false;
+    }
+    }
+    </script>
+</body>
+</html>
